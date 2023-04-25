@@ -1,9 +1,9 @@
 import React from "react";
 import { ListGroup, ListGroupItem } from "reactstrap";
-function Category() {
+function Category(props) {
   return (
     <div>
-      <h3>Category List</h3>
+      <h3>{props.title}</h3>
       <ListGroup>
         <ListGroupItem>Cras justo odio</ListGroupItem>
         <ListGroupItem>Dapibus ac facilisis in</ListGroupItem>
