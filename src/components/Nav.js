@@ -1,11 +1,7 @@
 import React from "react";
 
 function Nav() {
-  return (
-    <div>
-      <h2>Navigation</h2>
-    </div>
-  );
+  return <div>Navigation</div>;
 }
 
 export default Nav;
