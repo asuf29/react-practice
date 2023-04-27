@@ -1,18 +1,30 @@
-import React from "react";
+import React, { useState } from "react";
 import { ListGroup, ListGroupItem } from "reactstrap";
-function Category(props) {
+
+function CategoryList(props) {
+  const [currentCategory, setCurrentCategory] = useState(null);
+
+  const handleClick = (category) => {
+    setCurrentCategory(category);
+  };
+
   return (
     <div>
       <h3>{props.title}</h3>
       <ListGroup>
-        <ListGroupItem>Cras justo odio</ListGroupItem>
-        <ListGroupItem>Dapibus ac facilisis in</ListGroupItem>
-        <ListGroupItem>Morbi leo risus</ListGroupItem>
-        <ListGroupItem>Porta ac consectetur ac</ListGroupItem>
-        <ListGroupItem>Vestibulum at eros</ListGroupItem>
+        {props.categories.map((category) => (
+          <ListGroupItem
+            key={category.categoryId}
+            onClick={() => handleClick(category)}
+            active={currentCategory === category}
+          >
+            {category.categoryName}
+          </ListGroupItem>
+        ))}
       </ListGroup>
+      <p>{currentCategory && currentCategory.categoryName}</p>
     </div>
   );
 }
 
-export default Category;
+export default CategoryList;
