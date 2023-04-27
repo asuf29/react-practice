@@ -3,6 +3,10 @@ import CategoryList from "./components/CategoryList";
 import ProductList from "./components/ProductList";
 import { Container, Row, Col } from "reactstrap";
 function App() {
+  const categories = [
+    { categoryId: 1, categoryName: "Beverages" },
+    { categoryId: 2, categoryName: "Condiments" },
+  ];
   return (
     <div className="App">
       <Container>
@@ -11,7 +15,7 @@ function App() {
         </Row>
         <Row>
           <Col xs="3">
-            <CategoryList title="Category List" />
+            <CategoryList title="Category List" categories={categories} />
           </Col>
           <Col xs="9">
             <ProductList title="Product List" />
