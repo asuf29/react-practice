@@ -7,6 +7,10 @@ function App() {
     { categoryId: 1, categoryName: "Beverages" },
     { categoryId: 2, categoryName: "Condiments" },
   ];
+
+  const handleCategorySelect = (category) => {
+    console.log("Selected Category:", category);
+  };
   return (
     <div className="App">
       <Container>
@@ -15,7 +19,11 @@ function App() {
         </Row>
         <Row>
           <Col xs="3">
-            <CategoryList title="Category List" categories={categories} />
+            <CategoryList
+              title="Category List"
+              categories={categories}
+              onCategorySelect={handleCategorySelect}
+            />
           </Col>
           <Col xs="9">
             <ProductList title="Product List" />
@@ -25,5 +33,4 @@ function App() {
     </div>
   );
 }
-
 export default App;
