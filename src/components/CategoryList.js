@@ -8,6 +8,10 @@ function CategoryList(props) {
     setCurrentCategory(category);
   };
 
+  const handleCategoryClick = (category) => {
+    props.onCategorySelect(category);
+  };
+
   return (
     <div>
       <h3>{props.title}</h3>
@@ -15,7 +19,10 @@ function CategoryList(props) {
         {props.categories.map((category) => (
           <ListGroupItem
             key={category.categoryId}
-            onClick={() => handleClick(category)}
+            onClick={() => {
+              handleCategoryClick(category);
+              handleClick();
+            }}
             active={currentCategory === category}
           >
             {category.categoryName}
