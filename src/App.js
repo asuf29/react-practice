@@ -9,6 +9,7 @@ function App() {
   ];
 
   const handleCategorySelect = (category) => {
+    setSelectedCategory(category);
     console.log("Selected Category:", category);
   };
   return (
